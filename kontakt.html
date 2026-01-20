@@ -159,7 +159,7 @@
         }
 header {
   text-align: center;
-  padding: 40px 20px;
+  padding: 0px 20px;
   background: white;
 }
 
@@ -177,7 +177,7 @@ header h1 {
   display: flex;
   gap: 12px;
   justify-content: center;
-  margin: 30px 0;
+  margin: 10px 0;
   flex-wrap: nowrap;
 }
 
@@ -192,12 +192,18 @@ header h1 {
   font-weight: 600;            /* um pouco mais “weight” */
   letter-spacing: 0.3px;       /* toque premium */
 
-  border-radius: 30px;
-  font-size: 14px;
+  border-radius: 5px;
+  font-size: 20px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.12);
   transition: transform .2s ease, box-shadow .2s ease;
 }
 
+.actions svg {
+  width: 18px;
+  height: 18px;
+  fill: white;   /* ÍCONES BRANCOS */
+  flex-shrink: 0;
+}
 .actions a:hover {
   text-decoration: none;       /* garante que não aparece */
 }
@@ -207,32 +213,45 @@ header h1 {
 
 .call { background: #2e7d32; }
 .whatsapp { background: #25D366; }
-.email { background: #1565c0; }
+.email { background: #104786; }
 
 .section-title {
-  text-align: center;
+  display: flex;
+  align-items: center;          /* alinha pela altura do texto */
+  justify-content: center;
+  gap: 15px;
+
   font-size: 22px;
-  margin: 40px 0 20px;
+  margin: 0 0 20px;
   font-weight: bold;
+  color: var(--texto);
 }
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  flex: 1;                      /* ocupa espaço dos lados */
+  height: 1px;                  /* espessura da linha */
+  background: #999;             /* cor da linha (ajusta se quiseres) */
+}
+
 
 .services {
   display: flex;
   gap: 24px;
-  padding: 10px 20px 50px;
+  padding: 10px 20px 10px;
   justify-content: center;
 }
 
 /* Card */
 .service {
-  background: var(--verde-claro);
+ 
   border-radius: 16px;
-  padding: 20px 15px;
+  
   text-align: center;
-  min-width: 180px;
-  max-width: 220px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-  transition: transform .3s ease, box-shadow .3s ease;
+  min-width: 120px;
+  max-width: 120px;
+  
 }
 
 .service:hover {
@@ -248,12 +267,7 @@ header h1 {
 }
 
 
-.service p {
-  margin-top: 15px;
-  font-weight: bold;
-  color: var(--texto);
-  font-size: 15px;
-}
+
 
 /* 📱 Mobile: scroll horizontal bonito */
 @media (max-width: 768px) {
@@ -285,14 +299,19 @@ header h1 {
 
 .area span {
   position: absolute;
-  bottom: 20px;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0,0,0,0.6);
+  transform: translate(-50%, -50%);
+
+  background: rgba(0, 0, 0, 0.6);
   color: white;
-  padding: 10px 20px;
+
+  padding: 10px;        /* 10px em todas as direções */
+  text-align: center;
+width: 90%;
   border-radius: 6px;
 }
+
 
 footer {
   background: var(--verde);
@@ -309,40 +328,74 @@ footer p {
   <a href="index.html">
   <img src="imagens/allround-services-Neto.png" alt="Neto Allround Service">
 </a>
+<h1 style="font-size: 30px; margin-top: -10px;">Neto Allround-Service</h1>
   <h1>Technischer Dienst für Haus, Garten & Event</h1>
 
   <div class="actions">
-    <a href="tel:+41774768462" class="call">📞 Anrufen</a>
-    <a href="https://wa.me/41774768462" target="_blank" class="whatsapp">💬 WhatsApp</a>
-    <a href="mailto:info@netoallroundservice.ch" class="email">✉️ E-Mail</a>
-  </div>
+  <a href="tel:+41774768462" class="call">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M6.6 10.8c1.5 3 4 5.5 7 7l2.3-2.3c.3-.3.8-.4 1.2-.2
+      1 .3 2 .5 3.1.5.7 0 1.3.6 1.3 1.3V21
+      c0 .7-.6 1.3-1.3 1.3C9.5 22.3 1.7 14.5 1.7 4.8
+      1.7 4.1 2.3 3.5 3 3.5H6.8c.7 0 1.3.6 1.3 1.3
+      0 1 .2 2.1.5 3.1.1.4 0 .9-.3 1.2l-2.3 1.7z"/>
+    </svg>
+    Anrufen
+  </a>
+
+  <a href="https://wa.me/41774768462" target="_blank" class="whatsapp">
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M16 2.9c-7.2 0-13 5.6-13 12.6
+      0 2.2.6 4.4 1.7 6.3L3 29l7.4-1.9
+      c1.8.9 3.7 1.3 5.6 1.3
+      7.2 0 13-5.6 13-12.6S23.2 2.9 16 2.9zm7.5 18
+      c-.3.8-1.6 1.5-2.2 1.6-.6.1-1.4.1-2.3-.2
+      -.5-.2-1.2-.4-2.1-.8-3.6-1.6-6-5.2-6.2-5.5
+      -.2-.3-1.5-2-.9-3.8.3-.9.8-1.3 1.1-1.5
+      .3-.2.6-.2.8-.2h.6c.2 0 .4-.1.6.4
+      .3.7.9 2.4 1 2.6.1.2.1.4 0 .6
+      -.1.2-.2.4-.4.6-.2.2-.4.4-.6.6
+      -.2.2-.4.4-.2.7.2.3 1 1.6 2.1 2.6
+      1.4 1.2 2.6 1.6 3 .8.4-.2.6-.4.8-.7
+      .2-.3.9-1 1.1-1.3.2-.3.4-.2.6-.1
+      .2.1 1.5.7 1.7.8.2.1.4.2.4.4
+      0 .2 0 .8-.3 1.6z"/>
+    </svg>
+    WhatsApp
+  </a>
+
+  <a href="mailto:info@netoallroundservice.ch" class="email">
+    ✉️ E-Mail
+  </a>
+</div>
+
 </header>
 
 <h2 class="section-title">Unsere Leistungen</h2>
 
-<section class="services">
+<section class="services" style="margin-top: -35px;">
   <div class="service">
-    <img src="imagens/kleinreparatur-fenster-tuer-silikonfugen-schweiz-kleinrenovation-umzugreparatur-lochflicke.png" alt="">
-    <p>Haus & Renovierung</p>
+    <img src="imagens/kleinreparatur-fenster-tuer-silikonfugen-schweiz-kleinrenovation-umzugreparatur-lochflicke.jfif" alt="">
+   
   </div>
 
   <div class="service">
-    <img src="imagens/ganzjaehrige-gartenpflege-rueckschnitt-laubentfernung-winterdienst-gartenunterhalt-jaeten-rasemaehen-heckeschneide.png" alt="">
-    <p>Gartenpflege</p>
+    <img src="imagens/ganzjaehrige-gartenpflege-rueckschnitt-laubentfernung-winterdienst-gartenunterhalt-jaeten-rasemaehen-heckeschneide.jfif" alt="">
+    
   </div>
 
   <div class="service">
-    <img src="imagens/aufbau-abbau-zelten-buehnen-messemonteur-gewerbemesse-monteur-maerktstaendem-weihnachtsmaerkte-montageservice-events-zeltaufbau-montage.png" alt="">
-    <p>Event-Service</p>
+    <img src="imagens/aufbau-abbau-zelten-buehnen-messemonteur-gewerbemesse-monteur-maerktstaendem-weihnachtsmaerkte-montageservice-events-zeltaufbau-montage.jfif" alt="">
+    
   </div>
 </section>
 
 
 <!-- Botão abaixo da secção services -->
-<div style="text-align:center; margin-bottom:40px;">
+<div style="text-align:center; margin-top: -50px; margin-bottom: 20px;">
   <a href="index.html" 
-     style="display:inline-block; background:#2e7d32; color:white; padding:12px 25px; 
-            border-radius:30px; text-decoration:none; font-weight:600; font-size:16px;">
+     style="display:inline-block; background:#2e7d32; color:white; padding:5px 15px; 
+            border-radius:5px; text-decoration:none; font-weight:600; font-size:16px;">
     Mehr erfahren
   </a>
 </div>
@@ -351,7 +404,7 @@ footer p {
 <h2 class="section-title">Einsatzgebiet</h2>
 
 <div class="area">
-  <img src="imagens/allround-services-zurich-aargau-luzern.jpg" alt="">
+  <img src="imagens/alpes-neto.jfif" alt="">
   <span>Wir sind im Raum Zürich und Umgebung für Sie da.</span>
 </div>
 
